@@ -1,7 +1,6 @@
 from telethon.types import PeerChannel
 from telethon.events import NewMessage
 from telethon.custom import Message
-from config import Config, bot
 from telethon import TelegramClient
 
 
