@@ -29,7 +29,7 @@ class Algoritms:
         
         full_name = first_name + last_name
         
-        if len(set(full_name.lower())) < 2 and full_name not in ALL_CHARACTERS:
+        if len(set(full_name.lower())) < 2 and full_name in ALL_CHARACTERS:
             return True
         return False
         
