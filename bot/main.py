@@ -5,20 +5,9 @@ from telethon.events import NewMessage
 from telethon.errors.rpcerrorlist import FloodWaitError, ChannelInvalidError, ChannelPrivateError
 from telethon.custom import Message
 from itertools import combinations
-from string import ascii_letters, digits
 import asyncio
-from config import Config, bot
+from config import Config, bot, ALL_CHARACTERS
 from algoritms import Algoritms
-
-
-
-PERSIAN_CHARACTERS = [
-    'ا', 'ب', 'پ', 'ت', 'ث', 'ج', 'چ', 'ح', 'خ',
-    'د', 'ذ', 'ر', 'ز', 'ژ', 'س', 'ش', 'ص', 'ض',
-    'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ک', 'گ', 'ل',
-    'م', 'ن', 'و', 'ه', 'ی'
-]
-
 
 
 def generate_combinations(characters):
@@ -28,8 +17,6 @@ def generate_combinations(characters):
             yield ''.join(combo)
     
 
-
-
 @bot.on(NewMessage(incoming=True, chats=Config.ADMINS, pattern="^check \d{8,15} [1-9]{1}\d{2,4}$"))
 async def check_channel(event: Message) -> None:
     
@@ -37,7 +24,6 @@ async def check_channel(event: Message) -> None:
     channel = PeerChannel(int(channel_id))
     users_removed = 0
     users_find = 0
-    ALL_CHARACTERS = list(ascii_letters) + list(digits) + PERSIAN_CHARACTERS 
     
     message = await event.reply("Please wait")
     
@@ -81,6 +67,7 @@ async def check_channel(event: Message) -> None:
             
     except Exception as e:
         print("error,", e)
+        await event.respond("canceled, error :", e)
 
 
 @bot.on(NewMessage(from_users=Config.ADMINS, pattern='hello', incoming=True))

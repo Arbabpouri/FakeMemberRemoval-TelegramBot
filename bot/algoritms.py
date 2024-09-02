@@ -1,5 +1,7 @@
 from typing import Generator
-from telethon.tl.types import User, UserStatusLastMonth, UserStatusEmpty
+from telethon.tl.types import User, UserStatusLastMonth
+from config import ALL_CHARACTERS
+
 class Algoritms:
     
     
@@ -27,7 +29,7 @@ class Algoritms:
         
         full_name = first_name + last_name
         
-        if len(set(full_name.lower())) > 1:
+        if len(set(full_name.lower())) < 1 and full_name not in ALL_CHARACTERS:
             return False
         return True
         
