@@ -1,5 +1,6 @@
 from telethon.types import PeerChannel
 from telethon.events import NewMessage
+from telethon.errors.rpcerrorlist import FloodWaitError
 from telethon.custom import Message
 from telethon import TelegramClient
 
@@ -25,7 +26,14 @@ bot = TelegramClient(
 
 @bot.on(NewMessage(incoming=True, chats=Config.ADMINS, func=lambda e: e.message.message.startwith('/check ')))
 async def check_channel(event: Message) -> None:
-    pass
+    channel_id = event.message.message.replace("/check ", "")
+    
+    if not channel_id.isnumberic():
+        return
+    
+    
+    
+    
 
 
 
