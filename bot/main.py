@@ -69,7 +69,7 @@ async def check_channel(event: Message) -> None:
                     await asyncio.sleep(e.seconds + 25)
                     print("End Flood Wait Error")
                     
-                await message.edit(f"Now - All Users Find: {users_num} - Users Removed : {users_removed}")
+                await message.edit(f"Now - All Users Find: {users_find} - Users Removed : {users_removed}")
                 
             if users_num > users_num:
                 break

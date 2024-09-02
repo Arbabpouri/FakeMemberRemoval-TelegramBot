@@ -27,7 +27,7 @@ class Algoritms:
         
         full_name = first_name + last_name
         
-        if len(set(full_name)) > 1:
+        if len(set(full_name.lower())) > 1:
             return False
         return True
         
