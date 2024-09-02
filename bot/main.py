@@ -29,6 +29,8 @@ async def check_channel(event: Message) -> None:
     
     
     try:
+        
+        await message.edit("Started")
 
         for combo in generate_combinations(ALL_CHARACTERS):
             
