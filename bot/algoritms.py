@@ -30,8 +30,8 @@ class Algoritms:
         full_name = first_name + last_name
         
         if len(set(full_name.lower())) < 1 and full_name not in ALL_CHARACTERS:
-            return False
-        return True
+            return True
+        return False
         
     def check(self) -> bool:
         print('=' * 50)
