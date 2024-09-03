@@ -101,7 +101,7 @@ async def commands(event: Message) -> None:
     
     if command == "hello":
         await event.reply("Hello Welcome To Novin Member Checker Bot <3")
-    elif command == "cancel":
+    elif command == "cancel" and cancel is False:
         cancel = True
         await event.reply("Canceled")
 
