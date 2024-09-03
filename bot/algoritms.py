@@ -42,7 +42,8 @@ class Algoritms:
         result = (
             self.is_deleted or
             self.last_seen_is_old or
-            self.is_fake_name
+            self.is_fake_name or
+            self.is_fake
         )
         
         
