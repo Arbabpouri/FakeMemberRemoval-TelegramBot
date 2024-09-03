@@ -4,8 +4,8 @@ from string import ascii_letters, digits
 class Config:
     
     SESSION_NAME = "NovinMemberCheckerBot"
-    API_ID = 10603708
-    API_HASH = "f17d354888d912173f1599ca3133e04e"
+    API_ID = 123
+    API_HASH = ""
     ADMINS = [
         2056493966, 
     ]

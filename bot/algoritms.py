@@ -1,4 +1,3 @@
-from typing import Generator
 from telethon.tl.types import User, UserStatusLastMonth
 from config import ALL_CHARACTERS
 
@@ -32,6 +31,10 @@ class Algoritms:
         if len(set(full_name.lower())) < 2 and full_name in ALL_CHARACTERS:
             return True
         return False
+    
+    @property
+    def is_fake(self) -> bool:
+        return self.user.fake
         
     def check(self) -> bool:
         print('=' * 50)
@@ -41,6 +44,8 @@ class Algoritms:
             self.last_seen_is_old or
             self.is_fake_name
         )
+        
+        
         
         text = f"User With Name - {self.user.first_name} - And User ID : {self.user.id}"
         
