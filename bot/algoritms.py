@@ -37,7 +37,6 @@ class Algoritms:
         return self.user.fake
         
     def check(self) -> bool:
-        print('=' * 50)
     
         result = (
             self.is_deleted or
@@ -45,8 +44,6 @@ class Algoritms:
             self.is_fake_name or
             self.is_fake
         )
-        
-        
         
         text = f"User With Name - {self.user.first_name} - And User ID : {self.user.id}"
         
